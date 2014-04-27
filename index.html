@@ -84,18 +84,8 @@
 		}
 		map.on('locationfound', onLocationFound);
 		map.on('locationerror', onLocationError);
-
-		map.locate({setView: true, maxZoom: 14});
-		new L.Control.GeoSearch({
-            	   provider: new L.GeoSearch.Provider.OpenStreetMap()
-        	}).addTo(map);
-        	    // Mapquest open layer
-    		L.tileLayer('http://otile1.mqcdn.com/tiles/1.0.0/map/{z}/{x}/{y}.png', {
-		   attribution: 'Map data &copy; OpenStreetMap contributors',
-        	   maxZoom: 18,
-        	   minZoom: 11
-    		}).addTo(map);
-
+		
+		
     		$.getJSON('http://api.flickr.com/services/rest/?jsoncallback=?', {
       		method: 'flickr.photos.search',
       		api_key: 'c375f1e26e8b14300d2945a0fd6c4e8e',
